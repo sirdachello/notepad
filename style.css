@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Heebo:wght@100..900&family=Yantramanav:wght@700&family=Zeyada&display=swap");
+
+body {
+  background: url(images/background.jpg);
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-wrapper {
+  width: 600px;
+  margin: auto;
+
+  position: relative;
+  display: flex;
+  gap: 4px;
+  transition-duration: 0.2s;
+}
+
+@media (max-width: 500px) {
+  .main-wrapper {
+    margin-top: 100px;
+  }
+}
+.page {
+  overflow-y: visible;
+
+  width: 565px;
+  min-height: 800px;
+}
+
+/* Navigation section */
+.tabs {
+  width: 0;
+  height: 800px;
+}
+.tabs-list {
+  transform: rotate(0.2deg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 180px;
+
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+.tab-item {
+  border-radius: 0 15px 15px 0;
+  background: no-repeat url(images/leather.jpg) center/cover;
+  border-right: 4px solid rgba(73, 11, 11, 0.418);
+  border-bottom: 2px solid rgb(73, 11, 11);
+  width: calc(600px - 565px);
+  flex: 1;
+
+  transition-property: width;
+  transition-duration: 0.2s;
+}
+
+.tab-item.active {
+  width: calc(600px - 540px);
+}
+
+.tab-item:hover {
+  width: calc(600px - 550px);
+}
+
+/* Navigation section */
+
+.page-input {
+  position: absolute;
+
+  background-color: transparent;
+  height: 550px;
+  width: 430px;
+  transform: rotate(0.5deg);
+  top: 248px;
+  left: 110px;
+
+  font-size: 1.2rem;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+
+  outline: none;
+  border: none;
+
+  resize: none;
+
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* buttons */
+
+.button {
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+
+  transition-duration: 0.2s;
+
+  position: absolute;
+
+  left: 35px;
+}
+.add-entry {
+  background: no-repeat url(images/add-paper.svg) center/cover;
+
+  bottom: 100px;
+}
+.remove-entry {
+  background: no-repeat url(images/crumpled-paper.svg) center/cover;
+
+  bottom: 35px;
+}
+.remove-entry:hover,
+.add-entry:hover {
+  transform: scale(1.2);
+}
+
+.remove-entry:hover::after,
+.add-entry:hover::after {
+  display: block;
+
+  width: max-content;
+  position: absolute;
+  top: -50%;
+  left: -30%;
+
+  -webkit-text-stroke: 1px rgb(73, 11, 11);
+}
+
+.remove-entry:hover::after {
+  content: "Remove Entry";
+}
+.add-entry:hover::after {
+  content: "Add Entry";
+}
